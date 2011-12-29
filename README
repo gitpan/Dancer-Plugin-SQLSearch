@@ -1,0 +1,51 @@
+Dancer-Plugin-SQLSearch
+
+This plugin implements a simple search helper for relational databases. 
+
+Normally, you first present a search page with an input field asking the user for a query string. You then look for the string in your database and present a page with the input field, a table with the first page of results, and pagination links to navigate through the full set of search results. If the user goes to one of the results, you can also have a link back to the search results.
+
+In more detail, the plugin will take a search query, split it into words, and create a data structure suitable for SQL::Abstract. It will also calculate the proper offset and limit for the requested results page, so that you can build the proper SQL query. The actual database query is executed by a subroutine that you will provide.
+
+SQL::Abstract is a simple way to produce SQL. It is the underlying tool for popular ORMs like DBIx::DataModel and DBIx::Class, and they can take the data structure directly and perform the database search for you.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Dancer::Plugin::SQLSearch
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dancer-Plugin-SQLSearch
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Dancer-Plugin-SQLSearch
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Dancer-Plugin-SQLSearch
+
+    Search CPAN
+        http://search.cpan.org/dist/Dancer-Plugin-SQLSearch/
+
+
+LICENSE AND COPYRIGHT
+
+Copyright (C) 2011 Julio Fraire
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+

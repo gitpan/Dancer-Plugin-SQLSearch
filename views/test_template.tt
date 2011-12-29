@@ -1,0 +1,9 @@
+Query: <% search.query %>
+Page:  <% search.page %>
+First Page: <% search.first_page %>
+Previous Page: <% search.prev_page %>
+Next Page: <% search.next_page %>
+Last Page: <% search.last_page %>
+Results: <% FOREACH result IN search.results %>
+    <% result.name %> <% result.constellation %> <% result.type %>
+<% END %>
