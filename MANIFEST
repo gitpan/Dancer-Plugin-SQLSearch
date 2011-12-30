@@ -2,7 +2,6 @@ Changes
 MANIFEST
 Makefile.PL
 README
-config.yml
 lib/Dancer/Plugin/SQLSearch.pm
 t/00-load.t
 t/10-basic.t
@@ -10,5 +9,7 @@ t/20-search_routine.t
 t/30-config.t
 t/40-template.t
 t/50-advanced_params.t
+t/55-advanced_params.t
+t/60-catch_exceptions.t
 views/test_template.tt
 META.yml                                 Module meta-data (added by MakeMaker)

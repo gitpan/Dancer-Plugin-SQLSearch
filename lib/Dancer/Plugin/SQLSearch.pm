@@ -7,7 +7,7 @@ use Carp;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # The search method can be called in four ways:
 # 1) To get a blank search page

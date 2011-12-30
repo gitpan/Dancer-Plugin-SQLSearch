@@ -1,5 +1,8 @@
 Revision history for Dancer-Plugin-SQLSearch
 
+0.02    2011-12-30
+        Removed config.yml from distribution. By having it, you needed
+        YAML to run tests. This caused cpan testers failed reports.
 0.01    2011-12-28
         Initial release
 

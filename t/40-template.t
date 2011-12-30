@@ -13,6 +13,7 @@ use Test::More import => ['!pass'], tests => 4;
     set show_errors => 1;
     set session     => 'Simple';
     set logger      => 'console';
+    set template    => 'template_toolkit';
     
     get '/search' => sub {
         my @search_fields = qw( name constellation type ); 
