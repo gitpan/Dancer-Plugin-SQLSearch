@@ -4,9 +4,17 @@ use lib 'lib/';
 use strict;
 use warnings;
 use Data::Dumper;
-use Test::More import => ['!pass'], tests => 4;
+use Test::More import => ['!pass'];
 
-{
+eval 'use Template';
+if ($@) {
+    plan skip_all => 'No template toolkit!';
+}
+else {
+    plan tests => 4;
+}
+
+{    
     use Dancer;
     use Dancer::Plugin::SQLSearch;
     

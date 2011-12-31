@@ -1,5 +1,8 @@
 Revision history for Dancer-Plugin-SQLSearch
 
+0.04    2011-12-30
+        Template test failed when Template Toolkit is not installed.
+        Now this test is skipped unless TT is available.
 0.03    2011-12-30
         Search terms are now AND'ed when the search is performed over a
         single database field. (Suggested by Naveed Massjouni).
