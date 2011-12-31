@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dancer-Plugin-SQLSearch
-version:            0.02
+version:            0.03
 abstract:           Search helper for relational databases
 author:
     - Julio Fraire <julio.fraire@gmail.com>

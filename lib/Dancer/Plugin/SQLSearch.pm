@@ -7,7 +7,7 @@ use Carp;
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # The search method can be called in four ways:
 # 1) To get a blank search page
@@ -165,12 +165,22 @@ sub _parse {
         @{ $chunks } = map qq{%$_%}, @{ $chunks };
     }
 
-    # build the where-clause
+    # build the where-clause in SQL::Abstract parlance
     my @clauses;
-    foreach my $field ( @$search_fields ) {
-        push @clauses, $field => { $search_type => $chunks };
+    if ( @$search_fields > 1 ) {
+        # When we have more than one search field, terms are OR'ed
+        foreach my $field ( @$search_fields ) {
+            push @clauses, $field => { $search_type => $chunks };
+        }
     }
-
+    else {
+        # When we have a single search field, terms are AND'ed
+        my @search_terms;
+        foreach my $chunk (@$chunks) {
+            push @search_terms, { $search_type => $chunk };
+        }
+        @clauses = ( @$search_fields => [ '-and' => \@search_terms ] );
+    }
     return \@clauses;
 }
 
@@ -403,6 +413,8 @@ This is a full example of the search routine that you must provide. Note that it
 =head1 CREDITS
 
 Many years ago I was looking for a module like this in CPAN, and I found it: Text::SQLSearch::SQL by Chisel Wright. However, that module is part of a larger distribution (actually, it is a full application, Parley) and so I stole a couple of routines from it. These routines are the heart of this plugin.
+
+Naveed Massjouni suggested that the search terms are AND'ed when there is only one database field to include in the database query.
 
 =head1 AUTHOR
 

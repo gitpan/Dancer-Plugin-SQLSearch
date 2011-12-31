@@ -11,5 +11,6 @@ t/40-template.t
 t/50-advanced_params.t
 t/55-advanced_params.t
 t/60-catch_exceptions.t
+t/65-single_field_search.t
 views/test_template.tt
 META.yml                                 Module meta-data (added by MakeMaker)

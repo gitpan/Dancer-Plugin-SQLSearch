@@ -1,5 +1,11 @@
 Revision history for Dancer-Plugin-SQLSearch
 
+0.03    2011-12-30
+        Search terms are now AND'ed when the search is performed over a
+        single database field. (Suggested by Naveed Massjouni).
+        A test accompanies the new behavior. Another test is included to
+        verify we have exact phrase searches when the search query is between
+        double quotes.
 0.02    2011-12-30
         Removed config.yml from distribution. By having it, you needed
         YAML to run tests. This caused cpan testers failed reports.
